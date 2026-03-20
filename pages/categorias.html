@@ -1,206 +1,174 @@
 <!DOCTYPE html>
-
-<html lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "secondary-container": "#dae2fd",
-              "error": "#ba1a1a",
-              "inverse-surface": "#2d3133",
-              "surface-variant": "#e0e3e5",
-              "outline-variant": "#bbcabf",
-              "on-secondary": "#ffffff",
-              "background": "#f7f9fb",
-              "on-surface": "#191c1e",
-              "on-tertiary-fixed-variant": "#005321",
-              "on-primary-container": "#00422b",
-              "surface-container": "#eceef0",
-              "surface-container-highest": "#e0e3e5",
-              "on-secondary-container": "#5c647a",
-              "surface-bright": "#f7f9fb",
-              "primary-fixed": "#6ffbbe",
-              "on-tertiary-container": "#00431a",
-              "tertiary-fixed-dim": "#4ae176",
-              "surface-container-low": "#f2f4f6",
-              "on-error-container": "#93000a",
-              "primary-container": "#10b981",
-              "surface-dim": "#d8dadc",
-              "inverse-primary": "#4edea3",
-              "error-container": "#ffdad6",
-              "on-secondary-fixed-variant": "#3f465c",
-              "on-background": "#191c1e",
-              "outline": "#6c7a71",
-              "surface-container-high": "#e6e8ea",
-              "on-surface-variant": "#3c4a42",
-              "surface-container-lowest": "#ffffff",
-              "on-error": "#ffffff",
-              "tertiary-container": "#06bb56",
-              "secondary-fixed-dim": "#bec6e0",
-              "inverse-on-surface": "#eff1f3",
-              "tertiary-fixed": "#6bff8f",
-              "on-primary-fixed": "#002113",
-              "surface": "#f7f9fb",
-              "primary": "#006c49",
-              "on-tertiary-fixed": "#002109",
-              "on-tertiary": "#ffffff",
-              "secondary": "#565e74",
-              "on-secondary-fixed": "#131b2e",
-              "on-primary": "#ffffff",
-              "primary-fixed-dim": "#4edea3",
-              "on-primary-fixed-variant": "#005236",
-              "surface-tint": "#006c49",
-              "secondary-fixed": "#dae2fd",
-              "tertiary": "#006e2f"
-            },
-            fontFamily: {
-              "headline": ["Manrope"],
-              "body": ["Inter"],
-              "label": ["Inter"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-          },
-        },
-      }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+<html class="light" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>FinanzasApp — Categorías</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#006c49",
+                        "primary-container": "#10b981",
+                        "surface": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container": "#eceef0",
+                        "on-surface": "#191c1e",
+                        "on-surface-variant": "#3c4a42",
+                        "on-secondary-fixed": "#131b2e",
+                        "error": "#ba1a1a",
+                        "outline-variant": "#bbcabf",
+                        "outline": "#6c7a71"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"]
+                    }
+                }
+            }
         }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
         body { font-family: 'Inter', sans-serif; }
         h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
     </style>
 </head>
-<body class="bg-background text-on-surface">
-<!-- SideNavBar -->
-<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 z-50">
-<div class="mb-10 px-4">
-<h1 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-headline tracking-tight">Financial Curator</h1>
-<p class="text-xs text-slate-500 font-medium">Premium Ledger</p>
-</div>
-<nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="dashboard.html">
-<span class="material-symbols-outlined">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="movimientos.html">
-<span class="material-symbols-outlined">payments</span>
-<span>Movimientos</span>
-</a>
-<!-- Active State: Categories -->
-<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 dark:border-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 transition-colors duration-200 font-manrope tracking-tight" href="categorias.html">
-<span class="material-symbols-outlined">category</span>
-<span>Categorías</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="beneficiarios.html">
-<span class="material-symbols-outlined">group</span>
-<span>Beneficiarios</span>
-</a>
-</nav>
-</aside>
-<!-- Main Content Area -->
-<main class="ml-64 min-h-screen">
-<!-- TopNavBar -->
-<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center h-16 px-8 shadow-sm dark:shadow-none">
-<div class="flex items-center gap-4">
-<h2 class="text-lg font-black text-slate-900 dark:text-white font-headline">Gestión de Categorías</h2>
-</div>
-<div class="flex items-center gap-6">
-<div class="flex items-center gap-3">
-<span class="text-sm font-medium text-slate-600" id="user-name-display">Usuario</span>
-<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden">
-<img alt="User Avatar" class="w-full h-full object-cover" src="https://ui-avatars.com/api/?name=User&background=006c49&color=fff"/>
-</div>
-</div>
-</div>
-</header>
-<!-- Canvas -->
-<div class="pt-24 pb-12 px-12 max-w-7xl mx-auto">
-<!-- Section: Agregar Categoría -->
-<section class="mb-12">
-<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
-<h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline mb-6 tracking-tight">Agregar Categoría</h3>
-<form class="flex flex-col md:flex-row items-end gap-6" id="form-categoria">
-<div class="flex-1 w-full">
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nombre de la categoría</label>
-<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface" id="cat-nombre" placeholder="Ej: Alimentación" type="text" required/>
-<span class="text-error text-[11px] font-medium hidden" id="error-cat-nombre"></span>
-</div>
-<div class="w-full md:w-64">
-<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tipo</label>
-<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface appearance-none" id="cat-tipo" required>
-<option value="INGRESO">Ingreso</option>
-<option value="GASTO" selected>Gasto</option>
-</select>
-</div>
-<button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 px-8 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 flex items-center gap-2" type="submit" id="btn-add-cat">
-<span class="material-symbols-outlined">add_circle</span>
-                            Guardar
-                        </button>
-</form>
-</div>
-</section>
-<!-- Section: Categorías Existentes -->
-<section>
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline tracking-tight">Categorías Existentes</h3>
-<span class="text-sm font-medium text-on-surface-variant px-3 py-1 bg-surface-container rounded-full" id="cat-count">0 Categorías</span>
-</div>
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hidden" id="container-table">
-<div class="overflow-x-auto">
-<table class="w-full text-left border-collapse">
-<thead class="bg-surface-container-low">
-<tr>
-<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Nombre</th>
-<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tipo</th>
-<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Acciones</th>
-</tr>
-</thead>
-<tbody class="divide-y-0" id="table-categorias">
-    <!-- Dinámico -->
-</tbody>
-</table>
-</div>
-</div>
-</div>
-<!-- Empty State -->
-<div class="mt-12 bg-surface-container-low/50 rounded-xl border-2 border-dashed border-outline-variant/30 py-20 flex flex-col items-center text-center" id="empty-state">
-<div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-5xl text-outline" style="font-variation-settings: 'wght' 200;">category</span>
-</div>
-<h4 class="text-xl font-bold text-on-surface font-headline mb-2">No hay categorías registradas aún</h4>
-<p class="text-on-surface-variant max-w-xs">Comienza agregando una categoría arriba para organizar tus finanzas.</p>
-</div>
-</section>
-</div>
-</main>
-
-<!-- Modal de Confirmación Deletar -->
-<div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm hidden" id="modal-delete">
-    <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl scale-95 transition-transform">
-        <div class="w-16 h-16 bg-error/10 text-error rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="material-symbols-outlined text-3xl">delete_forever</span>
+<body class="bg-surface text-on-surface min-h-screen">
+    <!-- TopNavBar -->
+    <header class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="flex justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
+            <div class="flex items-center gap-8">
+                <div class="flex items-center gap-2">
+                    <button id="btn-mobile-menu" class="md:hidden material-symbols-outlined p-2 hover:bg-slate-100 rounded-full mr-2">menu</button>
+                    <span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+                    <span class="text-xl font-bold tracking-tight text-slate-900">Financial Curator</span>
+                </div>
+                <nav class="hidden md:flex items-center gap-6">
+                    <a class="text-slate-500 font-inter text-sm hover:text-primary transition-colors" href="dashboard.html">Dashboard</a>
+                    <a class="text-primary font-bold font-inter text-sm" href="categorias.html">Categorías</a>
+                    <a class="text-slate-500 font-inter text-sm hover:text-primary transition-colors" href="beneficiarios.html">Beneficiarios</a>
+                    <a class="text-slate-500 font-inter text-sm hover:text-primary transition-colors" href="movimientos.html">Movimientos</a>
+                </nav>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden md:inline text-sm font-medium text-slate-600" id="user-name-display">Usuario</span>
+                <button class="material-symbols-outlined text-on-secondary-fixed p-2 hover:bg-slate-50 transition-colors rounded-full" id="btn-logout" title="Cerrar Sesión">logout</button>
+                <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+                    <img alt="User profile" class="w-full h-full object-cover" src="https://ui-avatars.com/api/?name=User&background=006c49&color=fff"/>
+                </div>
+            </div>
         </div>
-        <h3 class="text-xl font-bold text-slate-900 text-center mb-2 font-headline">¿Eliminar categoría?</h3>
-        <p class="text-slate-500 text-center text-sm mb-8">Esta acción no se puede deshacer y afectará a los movimientos asociados.</p>
-        <div class="flex gap-3">
-            <button class="flex-1 py-3 px-4 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors" id="btn-cancel-delete">Cancelar</button>
-            <button class="flex-1 py-3 px-4 rounded-xl font-bold text-white bg-error hover:bg-error/90 transition-colors shadow-lg shadow-error/20" id="btn-confirm-delete">Eliminar</button>
+        <div class="bg-slate-100 h-px w-full"></div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 py-8">
+        <!-- Page Header -->
+        <div class="mb-10">
+            <h1 class="text-3xl font-extrabold tracking-tight text-on-secondary-fixed mb-2">Categorías</h1>
+            <p class="text-on-surface-variant font-medium">Organiza tus ingresos y gastos por tipo para un mejor seguimiento.</p>
+        </div>
+
+        <!-- Section: Agregar Categoría -->
+        <section class="mb-12">
+            <div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+                <h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline mb-6 tracking-tight">Nueva Categoría</h3>
+                <form class="grid grid-cols-1 md:grid-cols-3 items-end gap-6" id="form-categoria">
+                    <div class="md:col-span-1">
+                        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nombre</label>
+                        <input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface" id="cat-nombre" placeholder="Ej: Alimentación" type="text" required/>
+                    </div>
+                    <div class="md:col-span-1">
+                        <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tipo</label>
+                        <select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface appearance-none" id="cat-tipo" required>
+                            <option value="INGRESO">Ingreso</option>
+                            <option value="GASTO" selected>Gasto</option>
+                        </select>
+                    </div>
+                    <button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 px-8 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 flex items-center justify-center gap-2" type="submit" id="btn-add-cat">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        <span>Guardar</span>
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Section: Categorías Existentes -->
+        <section>
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline tracking-tight">Categorías Existentes</h3>
+                <span class="text-sm font-medium text-on-surface-variant px-3 py-1 bg-surface-container rounded-full" id="cat-count">0 Categorías</span>
+            </div>
+            
+            <div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hidden" id="container-table">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-surface-container-low">
+                            <tr>
+                                <th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Nombre</th>
+                                <th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tipo</th>
+                                <th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y-0" id="table-categorias">
+                            <!-- Dinámico -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Empty State -->
+            <div class="mt-12 bg-surface-container-low/50 rounded-xl border-2 border-dashed border-outline-variant/30 py-20 flex flex-col items-center text-center" id="empty-state">
+                <div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-6">
+                    <span class="material-symbols-outlined text-5xl text-outline" style="font-variation-settings: 'wght' 200;">category</span>
+                </div>
+                <h4 class="text-xl font-bold text-on-surface font-headline mb-2">No hay categorías</h4>
+                <p class="text-on-surface-variant max-w-xs">Comienza agregando una categoría arriba para organizar tus finanzas.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Confirmación Delete -->
+    <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm hidden" id="modal-delete">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl scale-95 transition-transform">
+            <div class="w-16 h-16 bg-error/10 text-error rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="material-symbols-outlined text-3xl">delete_forever</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 text-center mb-2 font-headline">¿Eliminar categoría?</h3>
+            <p class="text-slate-500 text-center text-sm mb-8">Esta acción no se puede deshacer y afectará a los movimientos asociados.</p>
+            <div class="flex gap-3">
+                <button class="flex-1 py-3 px-4 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200" id="btn-cancel-delete">Cancelar</button>
+                <button class="flex-1 py-3 px-4 rounded-xl font-bold text-white bg-error hover:bg-error/90" id="btn-confirm-delete">Eliminar</button>
+            </div>
         </div>
     </div>
-</div>
 
-<script src="../assets/js/api.js"></script>
-<script src="../assets/js/session.js"></script>
-<script src="../assets/js/toast.js"></script>
-<script src="../assets/js/nav.js"></script>
-<script src="../assets/js/categorias.js"></script>
-</body></html>
+    <!-- Mobile Sidebar -->
+    <aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-64 bg-white z-[60] shadow-2xl transform -translate-x-full transition-transform duration-300 md:hidden">
+        <div class="p-6">
+            <div class="flex items-center justify-between mb-8">
+                <span class="text-xl font-bold text-primary">Menú</span>
+                <button id="btn-close-mobile" class="material-symbols-outlined">close</button>
+            </div>
+            <nav class="flex flex-col gap-2">
+                <a class="px-4 py-3 rounded-xl text-slate-600" href="dashboard.html">Dashboard</a>
+                <a class="px-4 py-3 rounded-xl text-primary font-bold bg-emerald-50" href="categorias.html">Categorías</a>
+                <a class="px-4 py-3 rounded-xl text-slate-600" href="beneficiarios.html">Beneficiarios</a>
+                <a class="px-4 py-3 rounded-xl text-slate-600" href="movimientos.html">Movimientos</a>
+            </nav>
+        </div>
+    </aside>
+
+    <script src="../assets/js/api.js"></script>
+    <script src="../assets/js/session.js"></script>
+    <script src="../assets/js/toast.js"></script>
+    <script src="../assets/js/nav.js"></script>
+    <script src="../assets/js/categorias.js"></script>
+</body>
+</html>

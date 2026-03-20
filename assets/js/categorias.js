@@ -74,8 +74,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const workspaceId = getWorkspaceId();
         tableCategorias.classList.add('loading');
         try {
-            const categories = await apiFetch(`/api/categorias?workspaceId=${workspaceId}`);
-            renderCategories(categories);
+            const response = await apiFetch(`/api/categorias?workspaceId=${workspaceId}`);
+            renderCategories(response.data || []);
         } catch (error) {
             showToast('Error al cargar categorías', 'error');
             renderCategories([]); 
@@ -136,14 +136,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setLoading(isLoading) {
         const btn = document.getElementById('btn-add-cat');
+        const btnText = btn.querySelector('span:not(.material-symbols-outlined)');
         if (isLoading) {
             btn.disabled = true;
             btn.classList.add('opacity-70');
-            btn.querySelector('span:last-child').textContent = 'Guardando...';
+            if (btnText) btnText.textContent = 'Guardando...';
         } else {
             btn.disabled = false;
             btn.classList.remove('opacity-70');
-            btn.querySelector('span:last-child').textContent = 'Guardar';
+            if (btnText) btnText.textContent = 'Guardar';
         }
     }
 });

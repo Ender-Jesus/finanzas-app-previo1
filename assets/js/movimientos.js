@@ -117,10 +117,13 @@ document.addEventListener('DOMContentLoaded', () => {
     async function loadDependencies() {
         const workspaceId = getWorkspaceId();
         try {
-            const [categories, beneficiaries] = await Promise.all([
+            const [resCat, resBen] = await Promise.all([
                 apiFetch(`/api/categorias?workspaceId=${workspaceId}`),
                 apiFetch(`/api/beneficiarios?workspaceId=${workspaceId}`)
             ]);
+
+            const categories = resCat.data || [];
+            const beneficiaries = resBen.data || [];
 
             allCategories = categories;
             
@@ -150,7 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const workspaceId = getWorkspaceId();
         tableMovimientos.classList.add('loading');
         try {
-            allMovements = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
+            const response = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
+            allMovements = response.data || [];
             calculateBalance();
             applyFilters();
         } catch (error) {
@@ -162,7 +166,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function calculateBalance() {
         const total = allMovements.reduce((acc, mov) => {
-            return mov.tipo === 'INGRESO' ? acc + mov.monto : acc - mov.monto;
+            const monto = parseFloat(mov.monto) || 0;
+            return mov.tipo === 'INGRESO' ? acc + monto : acc - monto;
         }, 0);
         saldoEl.textContent = currencyFormatter.format(total);
         saldoEl.className = `text-4xl font-extrabold font-headline mb-6 ${total >= 0 ? 'text-emerald-400' : 'text-error'}`;

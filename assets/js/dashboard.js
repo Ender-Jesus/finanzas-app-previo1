@@ -26,18 +26,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const workspaceId = getWorkspaceId();
         
         tableMovimientos.classList.add('loading');
+        const now = new Date();
+        const anio = now.getFullYear();
+        const mes = now.getMonth() + 1; // getMonth() es 0-11
         try {
-            // 1. Obtener Resumen (Usamos el endpoint verificado o fallback)
-            const resumen = await apiFetch(`/api/dashboard/resumen-mensual?workspaceId=${workspaceId}`);
-            renderSummaryCards(resumen);
+            // 1. Obtener Resumen (Usamos el endpoint verificado)
+            const resResumen = await apiFetch(`/api/dashboard/resumen-mensual?workspaceId=${workspaceId}&anio=${anio}&mes=${mes}`);
+            renderSummaryCards(resResumen.data || {});
 
             // 2. Obtener y Renderizar Gráfico
-            const gastosResponse = await apiFetch(`/api/reportes/gastos-por-categoria?workspaceId=${workspaceId}`);
-            renderChart(gastosResponse);
+            const resGastos = await apiFetch(`/api/reportes/gastos-por-categoria?workspaceId=${workspaceId}&anio=${anio}&mes=${mes}`);
+            renderChart(resGastos.data || []);
 
             // 3. Obtener últimos movimientos
-            const movimientos = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
-            renderRecentMovements(movimientos.slice(0, 5));
+            const resMov = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
+            renderRecentMovements((resMov.data || []).slice(0, 5));
 
         } catch (error) {
             showToast('Error al cargar datos del dashboard', 'error');

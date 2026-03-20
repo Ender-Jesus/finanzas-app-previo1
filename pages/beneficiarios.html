@@ -81,62 +81,34 @@
     </style>
 </head>
 <body class="bg-surface text-on-surface min-h-screen">
-<!-- TopNavBar (Shared Component) -->
-<header class="fixed top-0 w-full z-50 bg-slate-50/70 backdrop-blur-md shadow-sm flex justify-between items-center px-8 h-16">
-<div class="text-2xl font-black text-emerald-800 tracking-tighter">FinanzasApp</div>
-<nav class="hidden md:flex items-center gap-8 font-manrope tracking-tight font-semibold">
-<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Dashboard</a>
-<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Presupuesto</a>
-<a class="text-emerald-700 border-b-2 border-emerald-600 pb-1" href="#">Beneficiarios</a>
-<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Reportes</a>
+<!-- TopNavBar -->
+<header class="bg-white/70 dark:bg-slate-900/70 backdrop-blur-md docked full-width top-0 sticky z-50 shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2">
+<button id="btn-mobile-menu" class="md:hidden material-symbols-outlined text-slate-600 p-2 hover:bg-slate-100 rounded-full transition-colors mr-2">menu</button>
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Financial Curator</span>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="dashboard.html">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="categorias.html">Categorías</a>
+<a class="font-inter text-sm" href="beneficiarios.html">Beneficiarios</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="movimientos.html">Movimientos</a>
 </nav>
+</div>
 <div class="flex items-center gap-4">
-<button id="btn-mobile-menu" class="md:hidden material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full mr-2">menu</button>
-<button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="notifications">notifications</button>
-<button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="settings">settings</button>
-<div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden">
-<img class="h-full w-full object-cover" data-alt="User profile avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV-upWrWmaiHhTqBtccUMHw0hODsjEi49H5paz56FbKwmMTnZl6CH50cY0xXYaSKPeYzwPHAZmJe-elDoyhk_0Nsa1rSokkaad1P1ZCFhohRX1HHSIl_7Z_6HInoBLqF79hZaYrnKNNlrY-pMyDCyw_adFIZk35JWBTOXnaKcERSP8awz9Pz79Vbf7prutEMtTV-K-5-724_xZrwhmqTEWKKxsNekrduhOodsnOn3MsR1XK-L3iD7-yRdf0bfPT_tpSt3PG85iHuY"/>
+<span class="hidden md:inline text-sm font-medium text-slate-600" id="user-name-display">Usuario</span>
+<button class="material-symbols-outlined text-on-secondary-fixed p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full" id="btn-logout" title="Cerrar Sesión">logout</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
+<img alt="User profile" class="w-full h-full object-cover" src="https://ui-avatars.com/api/?name=User&background=006c49&color=fff"/>
 </div>
 </div>
+</div>
+<div class="bg-slate-100 dark:bg-slate-800 h-px w-full"></div>
 </header>
-<div class="flex pt-16">
-<!-- SideNavBar (Shared Component) -->
-<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-slate-100 hidden md:flex flex-col gap-2 py-4 border-r border-slate-200/50">
-<div class="px-6 mb-8">
-<div class="font-bold text-emerald-900 font-manrope">Mi Curador</div>
-<div class="text-xs text-slate-500 font-manrope">Gestión Académica</div>
-</div>
-<nav class="flex flex-col gap-1">
-<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
-                    Inicio
-                </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
-                    Cuentas
-                </a>
-<a class="flex items-center gap-3 px-6 py-3 bg-white text-emerald-700 font-bold rounded-r-full mr-4 font-manrope text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="group">group</span>
-                    Beneficiarios
-                </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
-                    Ahorros
-                </a>
-<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
-<span class="material-symbols-outlined" data-icon="help">help</span>
-                    Ayuda
-                </a>
-</nav>
-<div class="mt-auto px-4 pb-8">
-<button class="w-full bg-primary text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-900/10 active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
-<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
-                    Nuevo Beneficiario
-                </button>
-</div>
-</aside>
 <!-- Main Content Area -->
-<main class="flex-1 md:ml-64 p-8 lg:p-12 max-w-7xl mx-auto w-full">
+<main class="flex-1 p-8 lg:p-12 max-w-7xl mx-auto w-full">
 <!-- Page Header -->
 <div class="mb-12">
 <h1 class="text-4xl font-extrabold tracking-tight text-on-secondary-fixed mb-2">Beneficiarios</h1>
@@ -151,20 +123,19 @@
 <span class="material-symbols-outlined text-primary-container" data-icon="person_add">person_add</span>
                             Agregar Beneficiario
                         </h2>
-<form class="space-y-5">
+<form class="space-y-5" id="form-beneficiario">
 <div>
 <label class="block text-xs font-semibold text-on-surface-variant tracking-wider uppercase mb-2">Nombre del Beneficiario</label>
-<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400" placeholder="Ej. Ana García" type="text"/>
+<input id="ben-nombre" class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400" placeholder="Ej. Ana García" type="text" required/>
 </div>
 <div>
 <label class="block text-xs font-semibold text-on-surface-variant tracking-wider uppercase mb-2">Descripción (Opcional)</label>
-<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400 resize-none" placeholder="Ej. Roomie - Pago de renta" rows="3"></textarea>
+<textarea id="ben-descripcion" class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400 resize-none" placeholder="Ej. Roomie - Pago de renta" rows="3"></textarea>
 </div>
+<button id="btn-add-ben" type="submit" class="mt-8 w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-xl active:scale-[0.98] transition-all hover:shadow-lg hover:shadow-emerald-200">
+    Agregar Beneficiario
+</button>
 </form>
-</div>
-<button class="mt-8 w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-xl active:scale-[0.98] transition-all hover:shadow-lg hover:shadow-emerald-200">
-                        Agregar Beneficiario
-                    </button>
 </div>
 <!-- Informational/Stat Card -->
 <div class="lg:col-span-7 bg-surface-container p-8 rounded-xl flex flex-col justify-center relative overflow-hidden">
@@ -206,63 +177,8 @@
 </div>
 </div>
 <!-- Grid of Cards -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- Card 1 -->
-<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
-<div class="h-12 w-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-4">
-<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
-</div>
-<h4 class="font-bold text-on-secondary-fixed text-lg">Carlos Mendoza</h4>
-<p class="text-on-surface-variant text-sm mt-1">Suscripción compartida Netflix</p>
-<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
-<span class="text-xs font-semibold text-slate-400">Banco Bog</span>
-<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
-<div class="h-12 w-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
-<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
-</div>
-<h4 class="font-bold text-on-secondary-fixed text-lg">Inmobiliaria Central</h4>
-<p class="text-on-surface-variant text-sm mt-1">Arriendo apto 402</p>
-<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
-<span class="text-xs font-semibold text-slate-400">Bancolombia</span>
-<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</div>
-<!-- Card 3 -->
-<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
-<div class="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
-<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
-</div>
-<h4 class="font-bold text-on-secondary-fixed text-lg">Universidad Nacional</h4>
-<p class="text-on-surface-variant text-sm mt-1">Matrícula Semestre VIII</p>
-<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
-<span class="text-xs font-semibold text-slate-400">Convenio</span>
-<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</div>
-<!-- Card 4 (A bit different/Visual variety) -->
-<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
-<div class="h-12 w-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined text-2xl" data-icon="restaurant">restaurant</span>
-</div>
-<h4 class="font-bold text-on-secondary-fixed text-lg">Laura Restrepo</h4>
-<p class="text-on-surface-variant text-sm mt-1">Cenas y salidas</p>
-<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
-<span class="text-xs font-semibold text-slate-400">Nequi</span>
-<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
-<span class="material-symbols-outlined" data-icon="delete">delete</span>
-</button>
-</div>
-</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="container-beneficiarios">
+    <!-- Dinámico -->
 </div>
 </section>
 <!-- Empty State Section (Instructional Toggle Simulation) -->
@@ -326,6 +242,20 @@
                 <span class="material-symbols-outlined">logout</span> Cerrar Sesión
             </a>
         </nav>
+    </div>
+    <!-- Modal de Confirmación Delete -->
+    <div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm hidden" id="modal-delete">
+        <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl scale-95 transition-transform">
+            <div class="w-16 h-16 bg-error/10 text-error rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="material-symbols-outlined text-3xl">delete_forever</span>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 text-center mb-2 font-headline">¿Eliminar beneficiario?</h3>
+            <p class="text-slate-500 text-center text-sm mb-8">Esta acción no se puede deshacer y el beneficiario desaparecerá de tus contactos frecuentes.</p>
+            <div class="flex gap-3">
+                <button class="flex-1 py-3 px-4 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200" id="btn-cancel-delete">Cancelar</button>
+                <button class="flex-1 py-3 px-4 rounded-xl font-bold text-white bg-error hover:bg-error/90" id="btn-confirm-delete">Eliminar</button>
+            </div>
+        </div>
     </div>
 </aside>
 </body></html>

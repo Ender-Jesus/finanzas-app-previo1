@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const workspaceId = getWorkspaceId();
         containerBeneficiarios.classList.add('loading');
         try {
-            const beneficiaries = await apiFetch(`/api/beneficiarios?workspaceId=${workspaceId}`);
-            renderBeneficiaries(beneficiaries);
+            const response = await apiFetch(`/api/beneficiarios?workspaceId=${workspaceId}`);
+            renderBeneficiaries(response.data || []);
         } catch (error) {
             showToast('Error al cargar beneficiarios', 'error');
             renderBeneficiaries([]);
@@ -121,14 +121,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function setLoading(isLoading) {
         const btn = document.getElementById('btn-add-ben');
+        const btnText = btn.querySelector('span:not(.material-symbols-outlined)');
         if (isLoading) {
             btn.disabled = true;
             btn.classList.add('opacity-70');
-            btn.textContent = 'Guardando...';
+            if (btnText) btnText.textContent = 'Guardando...';
         } else {
             btn.disabled = false;
             btn.classList.remove('opacity-70');
-            btn.textContent = 'Guardar';
+            if (btnText) btnText.textContent = 'Agregar...';
         }
     }
 });
