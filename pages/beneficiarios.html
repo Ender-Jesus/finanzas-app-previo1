@@ -3,6 +3,7 @@
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>FinanzasApp — Beneficiarios</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -90,6 +91,7 @@
 <a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Reportes</a>
 </nav>
 <div class="flex items-center gap-4">
+<button id="btn-mobile-menu" class="md:hidden material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full mr-2">menu</button>
 <button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="notifications">notifications</button>
 <button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="settings">settings</button>
 <div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden">
@@ -299,4 +301,31 @@
 <span class="text-[10px] font-manrope">Ahorros</span>
 </button>
 </nav>
+<!-- Sidebar Móvil -->
+<aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-slate-900 z-[60] shadow-2xl transform -translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+            <span class="text-xl font-bold text-primary">Menú</span>
+            <button id="btn-close-mobile" class="material-symbols-outlined">close</button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="dashboard.html">
+                <span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="categorias.html">
+                <span class="material-symbols-outlined">category</span> Categorías
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="beneficiarios.html">
+                <span class="material-symbols-outlined">group</span> Beneficiarios
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="movimientos.html">
+                <span class="material-symbols-outlined">payments</span> Movimientos
+            </a>
+            <hr class="my-4 border-slate-200 dark:border-slate-800">
+            <a id="btn-logout" class="flex items-center gap-3 px-4 py-3 rounded-xl text-error" href="#">
+                <span class="material-symbols-outlined">logout</span> Cerrar Sesión
+            </a>
+        </nav>
+    </div>
+</aside>
 </body></html>

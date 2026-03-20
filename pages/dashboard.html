@@ -3,7 +3,7 @@
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academic Curator - FinanzasApp Dashboard</title>
+<title>FinanzasApp — Dashboard</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -88,19 +88,22 @@
 <div class="flex justify-between items-center px-6 py-3 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-8">
 <div class="flex items-center gap-2">
-<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Academic Curator</span>
+<button id="btn-mobile-menu" class="md:hidden material-symbols-outlined text-slate-600 p-2 hover:bg-slate-100 rounded-full transition-colors mr-2">menu</button>
+<span class="material-symbols-outlined text-primary text-3xl">account_balance</span>
+<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-50">Financial Curator</span>
 </div>
 <nav class="hidden md:flex items-center gap-6">
-<a class="text-emerald-700 dark:text-emerald-400 font-semibold border-b-2 border-emerald-600 pb-1 font-inter text-sm" href="#">Dashboard</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-inter text-sm" href="#">Categorías</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-inter text-sm" href="#">Beneficiarios</a>
-<a class="text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 transition-colors font-inter text-sm" href="#">Movimientos</a>
+<a class="font-inter text-sm" href="dashboard.html">Dashboard</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="categorias.html">Categorías</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="beneficiarios.html">Beneficiarios</a>
+<a class="text-slate-500 dark:text-slate-400 font-inter text-sm" href="movimientos.html">Movimientos</a>
 </nav>
 </div>
 <div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-on-secondary-fixed p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full" data-icon="logout">logout</button>
+<span class="hidden md:inline text-sm font-medium text-slate-600" id="user-name-display">Usuario</span>
+<button class="material-symbols-outlined text-on-secondary-fixed p-2 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors rounded-full" id="btn-logout" title="Cerrar Sesión">logout</button>
 <div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container">
-<img alt="User profile" class="w-full h-full object-cover" data-alt="Small circular user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDItZilygLfeqJEIJt6CV-MBCl2HHG8tpdNF0hnUWczv9EOpjBFxpyUWK2C3V-FnNla55s3uUYeOtAMZvy1TBAgHdcq4kR9mBmv1sH5YZ8B_s72IW-sHETNFO593iyti-ubXQX_Rk28zvInFcxdSHUF9yGrNDLYeav64tOJ0DQwz58P8yUNy4-g5B-yqkDhpUtrmIpZIwHDKT_Xv0OtNcdK4pvYkPHgafiKB1szT-5W6XnvX-JWF_k7HaX3fIXuu1_6MJTAY-ICrWM"/>
+<img alt="User profile" class="w-full h-full object-cover" src="https://ui-avatars.com/api/?name=User&background=006c49&color=fff"/>
 </div>
 </div>
 </div>
@@ -118,34 +121,34 @@
 <div class="bg-surface-container-lowest p-6 rounded-2xl transition-transform hover:scale-[1.02] duration-300">
 <div class="flex justify-between items-start mb-4">
 <div class="p-3 bg-tertiary/10 rounded-xl">
-<span class="material-symbols-outlined text-tertiary" data-icon="arrow_upward">arrow_upward</span>
+<span class="material-symbols-outlined text-tertiary">arrow_upward</span>
 </div>
 <span class="text-xs font-bold text-tertiary uppercase tracking-wider">Ingresos</span>
 </div>
 <h3 class="text-on-surface-variant text-sm font-semibold mb-1">Total Ingresos</h3>
-<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed">$4,250.00</p>
+<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed" id="total-ingresos">$0.00</p>
 </div>
 <!-- Total Gastos -->
 <div class="bg-surface-container-lowest p-6 rounded-2xl transition-transform hover:scale-[1.02] duration-300">
 <div class="flex justify-between items-start mb-4">
 <div class="p-3 bg-error/10 rounded-xl">
-<span class="material-symbols-outlined text-error" data-icon="arrow_downward">arrow_downward</span>
+<span class="material-symbols-outlined text-error">arrow_downward</span>
 </div>
 <span class="text-xs font-bold text-error uppercase tracking-wider">Gastos</span>
 </div>
 <h3 class="text-on-surface-variant text-sm font-semibold mb-1">Total Gastos</h3>
-<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed">$1,840.50</p>
+<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed" id="total-gastos">$0.00</p>
 </div>
 <!-- Balance -->
 <div class="bg-surface-container-lowest p-6 rounded-2xl border-l-4 border-primary transition-transform hover:scale-[1.02] duration-300 shadow-[0_20px_40px_rgba(19,27,46,0.06)]">
 <div class="flex justify-between items-start mb-4">
 <div class="p-3 bg-primary/10 rounded-xl">
-<span class="material-symbols-outlined text-primary" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="material-symbols-outlined text-primary">account_balance_wallet</span>
 </div>
 <span class="text-xs font-bold text-primary uppercase tracking-wider">Neto</span>
 </div>
 <h3 class="text-on-surface-variant text-sm font-semibold mb-1">Balance Actual</h3>
-<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed">$2,409.50</p>
+<p class="text-3xl font-extrabold font-headline tracking-tight text-on-secondary-fixed" id="total-balance">$0.00</p>
 </div>
 </div>
 <!-- Asymmetric Two-Column Section -->
@@ -154,47 +157,13 @@
 <section class="lg:col-span-4 flex flex-col gap-6">
 <div class="bg-surface-container-lowest p-8 rounded-3xl h-full">
 <h2 class="text-lg font-bold text-on-secondary-fixed mb-8 tracking-tight">Gasto por Categoría</h2>
-<div class="relative w-48 h-48 mx-auto mb-8 flex items-center justify-center">
-<!-- Custom CSS Donut Placeholder -->
-<div class="absolute inset-0 rounded-full border-[16px] border-slate-100"></div>
-<div class="absolute inset-0 rounded-full border-[16px] border-emerald-500" style="clip-path: polygon(50% 50%, 50% 0%, 100% 0%, 100% 70%, 50% 50%);"></div>
-<div class="absolute inset-0 rounded-full border-[16px] border-indigo-400" style="clip-path: polygon(50% 50%, 0% 70%, 0% 0%, 50% 0%, 50% 50%);"></div>
-<div class="flex flex-col items-center">
-<span class="text-2xl font-bold text-on-secondary-fixed">72%</span>
-<span class="text-[10px] uppercase font-bold text-slate-400">Presupuesto</span>
+<div class="relative w-full aspect-square mx-auto mb-8 flex items-center justify-center">
+    <canvas id="chart-categorias"></canvas>
 </div>
-</div>
-<ul class="space-y-4">
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 rounded-full bg-emerald-500"></div>
-<span class="text-sm font-medium text-on-surface-variant">Alimentación</span>
-</div>
-<span class="text-sm font-bold text-on-secondary-fixed">$850.00</span>
-</li>
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 rounded-full bg-indigo-400"></div>
-<span class="text-sm font-medium text-on-surface-variant">Educación</span>
-</div>
-<span class="text-sm font-bold text-on-secondary-fixed">$600.00</span>
-</li>
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 rounded-full bg-amber-400"></div>
-<span class="text-sm font-medium text-on-surface-variant">Transporte</span>
-</div>
-<span class="text-sm font-bold text-on-secondary-fixed">$240.50</span>
-</li>
-<li class="flex items-center justify-between">
-<div class="flex items-center gap-3">
-<div class="w-3 h-3 rounded-full bg-slate-200"></div>
-<span class="text-sm font-medium text-on-surface-variant">Otros</span>
-</div>
-<span class="text-sm font-bold text-on-secondary-fixed">$150.00</span>
-</li>
+<ul class="space-y-4" id="chart-legend">
+    <!-- Dinámico -->
 </ul>
-<button class="w-full mt-8 py-3 bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-semibold rounded-xl transition-all text-sm">Ver Detalle por Categoría</button>
+<a href="categorias.html" class="block w-full mt-8 py-3 bg-surface-container-high hover:bg-surface-container-highest text-on-surface text-center font-semibold rounded-xl transition-all text-sm">Ver Detalle por Categoría</a>
 </div>
 </section>
 <!-- Movimientos Recientes (8 Cols) -->
@@ -204,76 +173,37 @@
 <h2 class="text-lg font-bold text-on-secondary-fixed tracking-tight">Movimientos Recientes</h2>
 <button class="text-emerald-600 font-bold text-sm hover:underline">Exportar CSV</button>
 </div>
-<div class="overflow-x-auto">
+<div class="overflow-x-auto min-h-[300px]">
 <table class="w-full border-separate border-spacing-y-2 px-6">
 <thead>
 <tr class="text-left text-[11px] uppercase tracking-[0.1em] text-on-surface-variant/60 font-bold">
 <th class="px-4 py-3">Fecha</th>
 <th class="px-4 py-3">Descripción</th>
 <th class="px-4 py-3">Categoría</th>
-<th class="px-4 py-3">Beneficiario</th>
 <th class="px-4 py-3 text-right">Monto</th>
 </tr>
 </thead>
-<tbody class="text-sm">
-<tr class="bg-surface hover:bg-surface-container-low transition-colors group">
-<td class="px-4 py-4 rounded-l-xl text-slate-500 font-medium">12 Oct 2023</td>
-<td class="px-4 py-4 font-bold text-on-secondary-fixed">Compra de Libros - Semestre 2</td>
-<td class="px-4 py-4">
-<span class="bg-indigo-100 text-indigo-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Educación</span>
-</td>
-<td class="px-4 py-4 text-slate-600">Librería Nacional</td>
-<td class="px-4 py-4 rounded-r-xl text-right font-bold text-error">-$240.00</td>
-</tr>
-<tr class="bg-surface hover:bg-surface-container-low transition-colors">
-<td class="px-4 py-4 rounded-l-xl text-slate-500 font-medium">11 Oct 2023</td>
-<td class="px-4 py-4 font-bold text-on-secondary-fixed">Beca de Excelencia</td>
-<td class="px-4 py-4">
-<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Ingreso</span>
-</td>
-<td class="px-4 py-4 text-slate-600">Universidad Distrital</td>
-<td class="px-4 py-4 rounded-r-xl text-right font-bold text-tertiary">+$1,500.00</td>
-</tr>
-<tr class="bg-surface hover:bg-surface-container-low transition-colors">
-<td class="px-4 py-4 rounded-l-xl text-slate-500 font-medium">10 Oct 2023</td>
-<td class="px-4 py-4 font-bold text-on-secondary-fixed">Almuerzo Cafetería Central</td>
-<td class="px-4 py-4">
-<span class="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Alimentación</span>
-</td>
-<td class="px-4 py-4 text-slate-600">Sodexo SAS</td>
-<td class="px-4 py-4 rounded-r-xl text-right font-bold text-error">-$12.50</td>
-</tr>
-<tr class="bg-surface hover:bg-surface-container-low transition-colors">
-<td class="px-4 py-4 rounded-l-xl text-slate-500 font-medium">08 Oct 2023</td>
-<td class="px-4 py-4 font-bold text-on-secondary-fixed">Recarga Tarjeta TuLlave</td>
-<td class="px-4 py-4">
-<span class="bg-slate-100 text-slate-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Transporte</span>
-</td>
-<td class="px-4 py-4 text-slate-600">Transmilenio</td>
-<td class="px-4 py-4 rounded-r-xl text-right font-bold text-error">-$50.00</td>
-</tr>
-<tr class="bg-surface hover:bg-surface-container-low transition-colors">
-<td class="px-4 py-4 rounded-l-xl text-slate-500 font-medium">05 Oct 2023</td>
-<td class="px-4 py-4 font-bold text-on-secondary-fixed">Depósito Familiar</td>
-<td class="px-4 py-4">
-<span class="bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full text-[10px] font-bold uppercase">Ingreso</span>
-</td>
-<td class="px-4 py-4 text-slate-600">Juan Pérez</td>
-<td class="px-4 py-4 rounded-r-xl text-right font-bold text-tertiary">+$400.00</td>
-</tr>
+<tbody class="text-sm" id="table-movimientos">
+    <!-- Dinámico -->
 </tbody>
 </table>
 </div>
 <div class="p-8 flex justify-center">
-<button class="text-on-surface-variant font-semibold text-sm flex items-center gap-2 hover:text-primary transition-colors">
+<a href="movimientos.html" class="text-on-surface-variant font-semibold text-sm flex items-center gap-2 hover:text-primary transition-colors">
                             Ver todos los movimientos
-                            <span class="material-symbols-outlined text-sm" data-icon="east">east</span>
-</button>
+                            <span class="material-symbols-outlined text-sm">east</span>
+</a>
 </div>
 </div>
 </section>
 </div>
 </main>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/dashboard.js"></script>
 <!-- BottomNavBar (Mobile Only) -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-2 md:hidden bg-white/80 dark:bg-slate-900/80 backdrop-blur-lg shadow-[0_-4px_20px_rgba(19,27,46,0.04)] rounded-t-3xl border-t border-slate-200/20 dark:border-slate-700/20">
 <a class="flex flex-col items-center justify-center bg-emerald-50 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-2xl px-3 py-1.5 scale-90 duration-150" href="#">
@@ -293,4 +223,31 @@
 <span class="font-inter text-[10px] font-medium">Movimientos</span>
 </a>
 </nav>
+<!-- Sidebar Móvil -->
+<aside id="mobile-sidebar" class="fixed inset-y-0 left-0 w-64 bg-white dark:bg-slate-900 z-[60] shadow-2xl transform -translate-x-full transition-transform duration-300 md:hidden">
+    <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+            <span class="text-xl font-bold text-primary">Menú</span>
+            <button id="btn-close-mobile" class="material-symbols-outlined">close</button>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="dashboard.html">
+                <span class="material-symbols-outlined">dashboard</span> Dashboard
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="categorias.html">
+                <span class="material-symbols-outlined">category</span> Categorías
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="beneficiarios.html">
+                <span class="material-symbols-outlined">group</span> Beneficiarios
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400" href="movimientos.html">
+                <span class="material-symbols-outlined">payments</span> Movimientos
+            </a>
+            <hr class="my-4 border-slate-200 dark:border-slate-800">
+            <a id="btn-logout" class="flex items-center gap-3 px-4 py-3 rounded-xl text-error" href="#">
+                <span class="material-symbols-outlined">logout</span> Cerrar Sesión
+            </a>
+        </nav>
+    </div>
+</aside>
 </body></html>

@@ -83,60 +83,41 @@
 <!-- SideNavBar -->
 <aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 z-50">
 <div class="mb-10 px-4">
-<h1 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-headline tracking-tight">Academic Curator</h1>
+<h1 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-headline tracking-tight">Financial Curator</h1>
 <p class="text-xs text-slate-500 font-medium">Premium Ledger</p>
 </div>
 <nav class="flex-1 space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="dashboard.html">
 <span class="material-symbols-outlined">dashboard</span>
 <span>Dashboard</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="movimientos.html">
 <span class="material-symbols-outlined">payments</span>
-<span>Transactions</span>
+<span>Movimientos</span>
 </a>
 <!-- Active State: Categories -->
-<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 dark:border-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 transition-colors duration-200 font-manrope tracking-tight" href="#">
+<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 dark:border-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 transition-colors duration-200 font-manrope tracking-tight" href="categorias.html">
 <span class="material-symbols-outlined">category</span>
-<span>Categories</span>
+<span>Categorías</span>
 </a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
-<span class="material-symbols-outlined">account_balance_wallet</span>
-<span>Budgets</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
-<span class="material-symbols-outlined">settings</span>
-<span>Settings</span>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="beneficiarios.html">
+<span class="material-symbols-outlined">group</span>
+<span>Beneficiarios</span>
 </a>
 </nav>
-<div class="mt-auto px-4 pt-4 border-t border-slate-200/20">
-<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all Active:scale-95">
-<span class="material-symbols-outlined">add</span>
-<span class="text-sm">Add Transaction</span>
-</button>
-</div>
 </aside>
 <!-- Main Content Area -->
 <main class="ml-64 min-h-screen">
 <!-- TopNavBar -->
 <header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center h-16 px-8 shadow-sm dark:shadow-none">
 <div class="flex items-center gap-4">
-<h2 class="text-lg font-black text-slate-900 dark:text-white font-headline">Categories Management</h2>
+<h2 class="text-lg font-black text-slate-900 dark:text-white font-headline">Gestión de Categorías</h2>
 </div>
 <div class="flex items-center gap-6">
-<div class="relative">
-<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-xl">search</span>
-<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary-container w-64" placeholder="Search categories..." type="text"/>
-</div>
 <div class="flex items-center gap-3">
-<button class="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-all">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<button class="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-all">
-<span class="material-symbols-outlined">help_outline</span>
-</button>
+<span class="text-sm font-medium text-slate-600" id="user-name-display">Usuario</span>
 <div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden">
-<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Student profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyFyXyRxVQFQgnM-CCws7eaQoBW9cTXWGr7gjz1ks9kxJvDtFgM_8LfORWeVR6Mxd-kJ_UgHfhxn_VvZtogTY5bqVm87wwvMp4NXLVPguG7mNr-WjlBhkxT-aDNs71fnxQkh0oqeaKhOgZfzaVlYTT1mdCgaRQ0srf8DbVGoEoDTz_eT4tpDIsqrU0vSs0O_hdGKj8G7sezY5SO1LwagaNpxbQRsBpCBaR88hx3X7x06U_wQPVYEngpBy_bvmaOJKHHiBI6QNBgnI"/>
+<img alt="User Avatar" class="w-full h-full object-cover" src="https://ui-avatars.com/api/?name=User&background=006c49&color=fff"/>
 </div>
 </div>
 </div>
@@ -147,21 +128,22 @@
 <section class="mb-12">
 <div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
 <h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline mb-6 tracking-tight">Agregar Categoría</h3>
-<form class="flex flex-col md:flex-row items-end gap-6">
+<form class="flex flex-col md:flex-row items-end gap-6" id="form-categoria">
 <div class="flex-1 w-full">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nombre de la categoría</label>
-<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface" placeholder="Ej: Alimentación" type="text"/>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface" id="cat-nombre" placeholder="Ej: Alimentación" type="text" required/>
+<span class="text-error text-[11px] font-medium hidden" id="error-cat-nombre"></span>
 </div>
 <div class="w-full md:w-64">
 <label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tipo</label>
-<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface appearance-none">
-<option value="ingreso">Ingreso</option>
-<option value="gasto">Gasto</option>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface appearance-none" id="cat-tipo" required>
+<option value="INGRESO">Ingreso</option>
+<option value="GASTO" selected>Gasto</option>
 </select>
 </div>
-<button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 px-8 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 flex items-center gap-2" type="button">
+<button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 px-8 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 flex items-center gap-2" type="submit" id="btn-add-cat">
 <span class="material-symbols-outlined">add_circle</span>
-                            Agregar Categoría
+                            Guardar
                         </button>
 </form>
 </div>
@@ -170,9 +152,9 @@
 <section>
 <div class="flex justify-between items-center mb-6">
 <h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline tracking-tight">Categorías Existentes</h3>
-<span class="text-sm font-medium text-on-surface-variant px-3 py-1 bg-surface-container rounded-full">4 Categorías</span>
+<span class="text-sm font-medium text-on-surface-variant px-3 py-1 bg-surface-container rounded-full" id="cat-count">0 Categorías</span>
 </div>
-<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm hidden" id="container-table">
 <table class="w-full text-left border-collapse">
 <thead class="bg-surface-container-low">
 <tr>
@@ -181,52 +163,13 @@
 <th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Acciones</th>
 </tr>
 </thead>
-<tbody class="divide-y-0">
-<!-- Row 1 -->
-<tr class="group hover:bg-surface-container-low transition-colors duration-200">
-<td class="px-8 py-5">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
-<span class="material-symbols-outlined text-lg">restaurant</span>
-</div>
-<span class="font-semibold text-on-surface">Alimentación</span>
-</div>
-</td>
-<td class="px-8 py-5">
-<span class="px-3 py-1 rounded-full text-xs font-bold bg-error-container text-on-error-container">Gasto</span>
-</td>
-<td class="px-8 py-5 text-right">
-<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">delete</span>
-</button>
-</td>
-</tr>
-<!-- Row 2 -->
-<tr class="group hover:bg-surface-container-low transition-colors duration-200">
-<td class="px-8 py-5">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-lg">work</span>
-</div>
-<span class="font-semibold text-on-surface">Salario</span>
-</div>
-</td>
-<td class="px-8 py-5">
-<span class="px-3 py-1 rounded-full text-xs font-bold bg-tertiary-container/20 text-on-tertiary-fixed-variant">Ingreso</span>
-</td>
-<td class="px-8 py-5 text-right">
-<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-lg transition-all">
-<span class="material-symbols-outlined text-xl">delete</span>
-</button>
-</td>
-</tr>
-<!-- Spacer for no-divider rule -->
-<tr class="h-2"></tr>
+<tbody class="divide-y-0" id="table-categorias">
+    <!-- Dinámico -->
 </tbody>
 </table>
 </div>
-<!-- Empty State (Conditional/Demonstrative) -->
-<div class="mt-12 bg-surface-container-low/50 rounded-xl border-2 border-dashed border-outline-variant/30 py-20 flex flex-col items-center text-center">
+<!-- Empty State -->
+<div class="mt-12 bg-surface-container-low/50 rounded-xl border-2 border-dashed border-outline-variant/30 py-20 flex flex-col items-center text-center" id="empty-state">
 <div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-6">
 <span class="material-symbols-outlined text-5xl text-outline" style="font-variation-settings: 'wght' 200;">category</span>
 </div>
@@ -236,6 +179,24 @@
 </section>
 </div>
 </main>
-<!-- FAB (Suppressed on Details/Settings per instructions, but kept if essential for transaction focus) -->
-<!-- Removed for focused Categories view as per Relevance Check -->
+
+<!-- Modal de Confirmación Deletar -->
+<div class="fixed inset-0 z-[60] flex items-center justify-center p-4 bg-slate-900/40 backdrop-blur-sm hidden" id="modal-delete">
+    <div class="bg-white rounded-2xl p-8 max-w-sm w-full shadow-2xl scale-95 transition-transform">
+        <div class="w-16 h-16 bg-error/10 text-error rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="material-symbols-outlined text-3xl">delete_forever</span>
+        </div>
+        <h3 class="text-xl font-bold text-slate-900 text-center mb-2 font-headline">¿Eliminar categoría?</h3>
+        <p class="text-slate-500 text-center text-sm mb-8">Esta acción no se puede deshacer y afectará a los movimientos asociados.</p>
+        <div class="flex gap-3">
+            <button class="flex-1 py-3 px-4 rounded-xl font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors" id="btn-cancel-delete">Cancelar</button>
+            <button class="flex-1 py-3 px-4 rounded-xl font-bold text-white bg-error hover:bg-error/90 transition-colors shadow-lg shadow-error/20" id="btn-confirm-delete">Eliminar</button>
+        </div>
+    </div>
+</div>
+
+<script src="../assets/js/api.js"></script>
+<script src="../assets/js/session.js"></script>
+<script src="../assets/js/nav.js"></script>
+<script src="../assets/js/categorias.js"></script>
 </body></html>
