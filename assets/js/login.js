@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     tabRegister.addEventListener('click', () => switchTab('register'));
 
     function switchTab(mode) {
+        console.log('Switching to mode:', mode);
         if (mode === 'login') {
             // Activar tab login
             tabLogin.classList.add('bg-surface-container-lowest', 'text-on-secondary-fixed', 'shadow-sm');
