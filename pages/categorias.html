@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Manrope:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#dae2fd",
+              "error": "#ba1a1a",
+              "inverse-surface": "#2d3133",
+              "surface-variant": "#e0e3e5",
+              "outline-variant": "#bbcabf",
+              "on-secondary": "#ffffff",
+              "background": "#f7f9fb",
+              "on-surface": "#191c1e",
+              "on-tertiary-fixed-variant": "#005321",
+              "on-primary-container": "#00422b",
+              "surface-container": "#eceef0",
+              "surface-container-highest": "#e0e3e5",
+              "on-secondary-container": "#5c647a",
+              "surface-bright": "#f7f9fb",
+              "primary-fixed": "#6ffbbe",
+              "on-tertiary-container": "#00431a",
+              "tertiary-fixed-dim": "#4ae176",
+              "surface-container-low": "#f2f4f6",
+              "on-error-container": "#93000a",
+              "primary-container": "#10b981",
+              "surface-dim": "#d8dadc",
+              "inverse-primary": "#4edea3",
+              "error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#3f465c",
+              "on-background": "#191c1e",
+              "outline": "#6c7a71",
+              "surface-container-high": "#e6e8ea",
+              "on-surface-variant": "#3c4a42",
+              "surface-container-lowest": "#ffffff",
+              "on-error": "#ffffff",
+              "tertiary-container": "#06bb56",
+              "secondary-fixed-dim": "#bec6e0",
+              "inverse-on-surface": "#eff1f3",
+              "tertiary-fixed": "#6bff8f",
+              "on-primary-fixed": "#002113",
+              "surface": "#f7f9fb",
+              "primary": "#006c49",
+              "on-tertiary-fixed": "#002109",
+              "on-tertiary": "#ffffff",
+              "secondary": "#565e74",
+              "on-secondary-fixed": "#131b2e",
+              "on-primary": "#ffffff",
+              "primary-fixed-dim": "#4edea3",
+              "on-primary-fixed-variant": "#005236",
+              "surface-tint": "#006c49",
+              "secondary-fixed": "#dae2fd",
+              "tertiary": "#006e2f"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-slate-50 dark:bg-slate-950 flex flex-col py-8 px-4 z-50">
+<div class="mb-10 px-4">
+<h1 class="text-xl font-bold text-slate-900 dark:text-slate-100 font-headline tracking-tight">Academic Curator</h1>
+<p class="text-xs text-slate-500 font-medium">Premium Ledger</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Transactions</span>
+</a>
+<!-- Active State: Categories -->
+<a class="flex items-center gap-3 px-4 py-3 text-emerald-700 dark:text-emerald-400 font-bold border-r-4 border-emerald-600 dark:border-emerald-400 bg-emerald-50/50 dark:bg-emerald-900/20 transition-colors duration-200 font-manrope tracking-tight" href="#">
+<span class="material-symbols-outlined">category</span>
+<span>Categories</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span>Budgets</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-emerald-600 dark:hover:text-emerald-300 hover:bg-slate-200/50 dark:hover:bg-slate-800/50 transition-colors duration-200 rounded-xl font-manrope tracking-tight font-semibold" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pt-4 border-t border-slate-200/20">
+<button class="w-full bg-gradient-to-br from-primary to-primary-container text-white py-3 px-4 rounded-xl font-bold flex items-center justify-center gap-2 hover:opacity-90 transition-all Active:scale-95">
+<span class="material-symbols-outlined">add</span>
+<span class="text-sm">Add Transaction</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="ml-64 min-h-screen">
+<!-- TopNavBar -->
+<header class="fixed top-0 right-0 w-[calc(100%-16rem)] z-40 bg-white/70 dark:bg-slate-900/70 backdrop-blur-md border-b border-slate-200/20 dark:border-slate-800/20 flex justify-between items-center h-16 px-8 shadow-sm dark:shadow-none">
+<div class="flex items-center gap-4">
+<h2 class="text-lg font-black text-slate-900 dark:text-white font-headline">Categories Management</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 material-symbols-outlined text-xl">search</span>
+<input class="pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full text-sm focus:ring-2 focus:ring-primary-container w-64" placeholder="Search categories..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<button class="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-slate-600 dark:text-slate-400 hover:text-emerald-500 transition-all">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="h-8 w-8 rounded-full bg-slate-200 overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Student profile avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCyFyXyRxVQFQgnM-CCws7eaQoBW9cTXWGr7gjz1ks9kxJvDtFgM_8LfORWeVR6Mxd-kJ_UgHfhxn_VvZtogTY5bqVm87wwvMp4NXLVPguG7mNr-WjlBhkxT-aDNs71fnxQkh0oqeaKhOgZfzaVlYTT1mdCgaRQ0srf8DbVGoEoDTz_eT4tpDIsqrU0vSs0O_hdGKj8G7sezY5SO1LwagaNpxbQRsBpCBaR88hx3X7x06U_wQPVYEngpBy_bvmaOJKHHiBI6QNBgnI"/>
+</div>
+</div>
+</div>
+</header>
+<!-- Canvas -->
+<div class="pt-24 pb-12 px-12 max-w-7xl mx-auto">
+<!-- Section: Agregar Categoría -->
+<section class="mb-12">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm">
+<h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline mb-6 tracking-tight">Agregar Categoría</h3>
+<form class="flex flex-col md:flex-row items-end gap-6">
+<div class="flex-1 w-full">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Nombre de la categoría</label>
+<input class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface" placeholder="Ej: Alimentación" type="text"/>
+</div>
+<div class="w-full md:w-64">
+<label class="block text-xs font-bold text-on-surface-variant uppercase tracking-wider mb-2">Tipo</label>
+<select class="w-full bg-surface-container-low border-none rounded-xl py-3 px-4 focus:ring-2 focus:ring-primary-container text-on-surface appearance-none">
+<option value="ingreso">Ingreso</option>
+<option value="gasto">Gasto</option>
+</select>
+</div>
+<button class="bg-gradient-to-br from-primary to-primary-container text-white py-3 px-8 rounded-xl font-bold transition-all hover:scale-[1.02] active:scale-95 shadow-lg shadow-primary/20 flex items-center gap-2" type="button">
+<span class="material-symbols-outlined">add_circle</span>
+                            Agregar Categoría
+                        </button>
+</form>
+</div>
+</section>
+<!-- Section: Categorías Existentes -->
+<section>
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-on-secondary-fixed text-xl font-extrabold font-headline tracking-tight">Categorías Existentes</h3>
+<span class="text-sm font-medium text-on-surface-variant px-3 py-1 bg-surface-container rounded-full">4 Categorías</span>
+</div>
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container-low">
+<tr>
+<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Nombre</th>
+<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest">Tipo</th>
+<th class="px-8 py-4 text-xs font-bold text-on-surface-variant uppercase tracking-widest text-right">Acciones</th>
+</tr>
+</thead>
+<tbody class="divide-y-0">
+<!-- Row 1 -->
+<tr class="group hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-tertiary/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-lg">restaurant</span>
+</div>
+<span class="font-semibold text-on-surface">Alimentación</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-error-container text-on-error-container">Gasto</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-lg transition-all">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="group hover:bg-surface-container-low transition-colors duration-200">
+<td class="px-8 py-5">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-lg">work</span>
+</div>
+<span class="font-semibold text-on-surface">Salario</span>
+</div>
+</td>
+<td class="px-8 py-5">
+<span class="px-3 py-1 rounded-full text-xs font-bold bg-tertiary-container/20 text-on-tertiary-fixed-variant">Ingreso</span>
+</td>
+<td class="px-8 py-5 text-right">
+<button class="p-2 text-on-surface-variant hover:text-error hover:bg-error-container/20 rounded-lg transition-all">
+<span class="material-symbols-outlined text-xl">delete</span>
+</button>
+</td>
+</tr>
+<!-- Spacer for no-divider rule -->
+<tr class="h-2"></tr>
+</tbody>
+</table>
+</div>
+<!-- Empty State (Conditional/Demonstrative) -->
+<div class="mt-12 bg-surface-container-low/50 rounded-xl border-2 border-dashed border-outline-variant/30 py-20 flex flex-col items-center text-center">
+<div class="w-24 h-24 bg-surface-container rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-5xl text-outline" style="font-variation-settings: 'wght' 200;">category</span>
+</div>
+<h4 class="text-xl font-bold text-on-surface font-headline mb-2">No hay categorías registradas aún</h4>
+<p class="text-on-surface-variant max-w-xs">Comienza agregando una categoría arriba para organizar tus finanzas.</p>
+</div>
+</section>
+</div>
+</main>
+<!-- FAB (Suppressed on Details/Settings per instructions, but kept if essential for transaction focus) -->
+<!-- Removed for focused Categories view as per Relevance Check -->
+</body></html>

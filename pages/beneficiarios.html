@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error-container": "#ffdad6",
+              "surface-container": "#eceef0",
+              "on-primary-container": "#00422b",
+              "on-error": "#ffffff",
+              "on-secondary-container": "#5c647a",
+              "surface-container-high": "#e6e8ea",
+              "inverse-surface": "#2d3133",
+              "surface-tint": "#006c49",
+              "surface-container-lowest": "#ffffff",
+              "outline": "#6c7a71",
+              "primary-fixed-dim": "#4edea3",
+              "inverse-primary": "#4edea3",
+              "tertiary-container": "#06bb56",
+              "on-secondary-fixed-variant": "#3f465c",
+              "surface-bright": "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "surface-dim": "#d8dadc",
+              "secondary-container": "#dae2fd",
+              "primary": "#006c49",
+              "on-tertiary-fixed-variant": "#005321",
+              "inverse-on-surface": "#eff1f3",
+              "on-surface": "#191c1e",
+              "secondary-fixed-dim": "#bec6e0",
+              "on-tertiary-container": "#00431a",
+              "surface-container-highest": "#e0e3e5",
+              "primary-container": "#10b981",
+              "on-primary": "#ffffff",
+              "on-tertiary-fixed": "#002109",
+              "tertiary": "#006e2f",
+              "outline-variant": "#bbcabf",
+              "surface-container-low": "#f2f4f6",
+              "on-background": "#191c1e",
+              "tertiary-fixed-dim": "#4ae176",
+              "primary-fixed": "#6ffbbe",
+              "error": "#ba1a1a",
+              "surface": "#f7f9fb",
+              "on-surface-variant": "#3c4a42",
+              "secondary": "#565e74",
+              "on-primary-fixed-variant": "#005236",
+              "on-secondary-fixed": "#131b2e",
+              "on-error-container": "#93000a",
+              "tertiary-fixed": "#6bff8f",
+              "on-secondary": "#ffffff",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#dae2fd",
+              "on-primary-fixed": "#002113",
+              "background": "#f7f9fb"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3 { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-slate-50/70 backdrop-blur-md shadow-sm flex justify-between items-center px-8 h-16">
+<div class="text-2xl font-black text-emerald-800 tracking-tighter">FinanzasApp</div>
+<nav class="hidden md:flex items-center gap-8 font-manrope tracking-tight font-semibold">
+<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Presupuesto</a>
+<a class="text-emerald-700 border-b-2 border-emerald-600 pb-1" href="#">Beneficiarios</a>
+<a class="text-slate-600 hover:text-emerald-600 transition-colors" href="#">Reportes</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-slate-600 p-2 hover:bg-emerald-50 rounded-full transition-all active:scale-95" data-icon="settings">settings</button>
+<div class="h-10 w-10 rounded-full bg-surface-container overflow-hidden">
+<img class="h-full w-full object-cover" data-alt="User profile avatar photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBV-upWrWmaiHhTqBtccUMHw0hODsjEi49H5paz56FbKwmMTnZl6CH50cY0xXYaSKPeYzwPHAZmJe-elDoyhk_0Nsa1rSokkaad1P1ZCFhohRX1HHSIl_7Z_6HInoBLqF79hZaYrnKNNlrY-pMyDCyw_adFIZk35JWBTOXnaKcERSP8awz9Pz79Vbf7prutEMtTV-K-5-724_xZrwhmqTEWKKxsNekrduhOodsnOn3MsR1XK-L3iD7-yRdf0bfPT_tpSt3PG85iHuY"/>
+</div>
+</div>
+</header>
+<div class="flex pt-16">
+<!-- SideNavBar (Shared Component) -->
+<aside class="h-screen w-64 fixed left-0 top-0 pt-20 bg-slate-100 hidden md:flex flex-col gap-2 py-4 border-r border-slate-200/50">
+<div class="px-6 mb-8">
+<div class="font-bold text-emerald-900 font-manrope">Mi Curador</div>
+<div class="text-xs text-slate-500 font-manrope">Gestión Académica</div>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                    Inicio
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+                    Cuentas
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 bg-white text-emerald-700 font-bold rounded-r-full mr-4 font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+                    Beneficiarios
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+                    Ahorros
+                </a>
+<a class="flex items-center gap-3 px-6 py-3 text-slate-500 hover:translate-x-1 transition-transform font-manrope text-sm" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                    Ayuda
+                </a>
+</nav>
+<div class="mt-auto px-4 pb-8">
+<button class="w-full bg-primary text-white py-3 rounded-xl font-semibold shadow-lg shadow-emerald-900/10 active:scale-95 transition-all text-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                    Nuevo Beneficiario
+                </button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-8 lg:p-12 max-w-7xl mx-auto w-full">
+<!-- Page Header -->
+<div class="mb-12">
+<h1 class="text-4xl font-extrabold tracking-tight text-on-secondary-fixed mb-2">Beneficiarios</h1>
+<p class="text-on-surface-variant font-body">Administra las personas a las que realizas transferencias frecuentes.</p>
+</div>
+<!-- Bento-style Grid Section -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+<!-- Add Beneficiary Form Card -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/20 shadow-sm flex flex-col justify-between">
+<div>
+<h2 class="text-xl font-bold text-on-secondary-fixed mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="person_add">person_add</span>
+                            Agregar Beneficiario
+                        </h2>
+<form class="space-y-5">
+<div>
+<label class="block text-xs font-semibold text-on-surface-variant tracking-wider uppercase mb-2">Nombre del Beneficiario</label>
+<input class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400" placeholder="Ej. Ana García" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-semibold text-on-surface-variant tracking-wider uppercase mb-2">Descripción (Opcional)</label>
+<textarea class="w-full bg-surface-container-low border-none rounded-lg p-3 focus:ring-0 focus:bg-surface-container-lowest focus:border-b-2 focus:border-primary transition-all text-on-surface placeholder:text-slate-400 resize-none" placeholder="Ej. Roomie - Pago de renta" rows="3"></textarea>
+</div>
+</form>
+</div>
+<button class="mt-8 w-full py-4 bg-gradient-to-br from-primary to-primary-container text-white font-bold rounded-xl active:scale-[0.98] transition-all hover:shadow-lg hover:shadow-emerald-200">
+                        Agregar Beneficiario
+                    </button>
+</div>
+<!-- Informational/Stat Card -->
+<div class="lg:col-span-7 bg-surface-container p-8 rounded-xl flex flex-col justify-center relative overflow-hidden">
+<div class="relative z-10">
+<span class="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold mb-4 inline-block">Tips de Seguridad</span>
+<h3 class="text-2xl font-bold text-on-secondary-fixed mb-4 max-w-md">Mantén tu lista de contactos actualizada</h3>
+<p class="text-on-secondary-fixed-variant leading-relaxed max-w-sm mb-6">
+                            Elimina beneficiarios que ya no utilices para mantener tu cuenta segura y evitar errores en transferencias futuras.
+                        </p>
+<div class="flex gap-4">
+<div class="flex items-center gap-2 text-primary font-semibold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="verified_user">verified_user</span>
+                                Verificado
+                            </div>
+<div class="flex items-center gap-2 text-slate-500 font-semibold text-sm">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+                                Último cambio: Hoy
+                            </div>
+</div>
+</div>
+<!-- Abstract Background Pattern -->
+<div class="absolute -right-16 -bottom-16 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="absolute top-8 right-8 text-primary/10 select-none">
+<span class="material-symbols-outlined text-[120px]" data-icon="shield">shield</span>
+</div>
+</div>
+</div>
+<!-- List Section -->
+<section class="mt-16">
+<div class="flex items-center justify-between mb-8">
+<h2 class="text-2xl font-bold text-on-secondary-fixed tracking-tight">Mis Beneficiarios</h2>
+<div class="flex gap-2">
+<button class="p-2 bg-surface-container-high rounded-lg text-on-surface hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</button>
+<button class="p-2 text-slate-400 hover:bg-surface-container-high rounded-lg transition-colors">
+<span class="material-symbols-outlined" data-icon="format_list_bulleted">format_list_bulleted</span>
+</button>
+</div>
+</div>
+<!-- Grid of Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
+<div class="h-12 w-12 rounded-full bg-primary-container/10 flex items-center justify-center text-primary-container mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="person">person</span>
+</div>
+<h4 class="font-bold text-on-secondary-fixed text-lg">Carlos Mendoza</h4>
+<p class="text-on-surface-variant text-sm mt-1">Suscripción compartida Netflix</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
+<span class="text-xs font-semibold text-slate-400">Banco Bog</span>
+<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
+<div class="h-12 w-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-600 mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="home">home</span>
+</div>
+<h4 class="font-bold text-on-secondary-fixed text-lg">Inmobiliaria Central</h4>
+<p class="text-on-surface-variant text-sm mt-1">Arriendo apto 402</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
+<span class="text-xs font-semibold text-slate-400">Bancolombia</span>
+<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
+<div class="h-12 w-12 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="school">school</span>
+</div>
+<h4 class="font-bold text-on-secondary-fixed text-lg">Universidad Nacional</h4>
+<p class="text-on-surface-variant text-sm mt-1">Matrícula Semestre VIII</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
+<span class="text-xs font-semibold text-slate-400">Convenio</span>
+<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+<!-- Card 4 (A bit different/Visual variety) -->
+<div class="group bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 hover:shadow-xl hover:shadow-slate-200/50 transition-all flex flex-col relative">
+<div class="h-12 w-12 rounded-full bg-secondary-container/20 flex items-center justify-center text-secondary mb-4">
+<span class="material-symbols-outlined text-2xl" data-icon="restaurant">restaurant</span>
+</div>
+<h4 class="font-bold text-on-secondary-fixed text-lg">Laura Restrepo</h4>
+<p class="text-on-surface-variant text-sm mt-1">Cenas y salidas</p>
+<div class="mt-6 pt-4 border-t border-slate-50 flex justify-between items-center">
+<span class="text-xs font-semibold text-slate-400">Nequi</span>
+<button class="text-error hover:bg-error-container/20 p-2 rounded-lg transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Empty State Section (Instructional Toggle Simulation) -->
+<section class="mt-24 py-20 bg-surface-container-low rounded-3xl border-2 border-dashed border-outline-variant/30 flex flex-col items-center justify-center text-center px-6">
+<div class="w-24 h-24 bg-surface-container-lowest rounded-full flex items-center justify-center mb-6 shadow-sm">
+<span class="material-symbols-outlined text-5xl text-slate-300" data-icon="group_off">group_off</span>
+</div>
+<h3 class="text-xl font-bold text-on-secondary-fixed mb-2">¿Sin nuevos beneficiarios?</h3>
+<p class="text-on-surface-variant max-w-md mx-auto mb-8">
+                    Aún no tienes beneficiarios registrados. Comienza agregando uno arriba para agilizar tus pagos mensuales.
+                </p>
+<div class="flex gap-4">
+<button class="text-primary font-bold text-sm hover:underline">Ver tutorial rápido</button>
+<span class="text-slate-300">|</span>
+<button class="text-slate-500 font-bold text-sm hover:text-on-surface transition-colors">Importar contactos</button>
+</div>
+</section>
+</main>
+</div>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-white/90 backdrop-blur-md h-16 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-manrope">Inicio</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="account_balance">account_balance</span>
+<span class="text-[10px] font-manrope">Cuentas</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-emerald-600 font-bold">
+<span class="material-symbols-outlined" data-icon="group" style="font-variation-settings: 'FILL' 1;">group</span>
+<span class="text-[10px] font-manrope">Beneficiarios</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-slate-400">
+<span class="material-symbols-outlined" data-icon="account_balance_wallet">account_balance_wallet</span>
+<span class="text-[10px] font-manrope">Ahorros</span>
+</button>
+</nav>
+</body></html>
