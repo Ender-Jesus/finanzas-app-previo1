@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Éxito: Limpiar formulario y pasar a Login
             registerForm.reset();
-            alert('Registro exitoso. Ahora puedes iniciar sesión.');
+            showToast('Registro exitoso. Ahora puedes iniciar sesión.', 'success');
             switchTab('login');
         } catch (error) {
             showInlineError('reg-email', error.message);
@@ -140,6 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             showInlineError('email', error.message);
+            showToast(error.message, 'error');
         } finally {
             setLoading('login', false);
         }

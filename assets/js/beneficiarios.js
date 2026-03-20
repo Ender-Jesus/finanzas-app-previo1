@@ -36,9 +36,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ nombre, descripcion, workspaceId })
             });
             formBeneficiario.reset();
+            showToast('Beneficiario creado', 'success');
             loadBeneficiaries();
         } catch (error) {
-            alert('Error al crear beneficiario: ' + error.message);
+            showToast(error.message, 'error');
         } finally {
             setLoading(false);
         }
@@ -60,21 +61,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             modalDelete.classList.add('hidden');
             beneficiaryToDelete = null;
+            showToast('Beneficiario eliminado', 'success');
             loadBeneficiaries();
         } catch (error) {
-            alert('Error al eliminar: ' + error.message);
+            showToast(error.message, 'error');
         }
     });
 
     // --- Funciones Core ---
     async function loadBeneficiaries() {
         const workspaceId = getWorkspaceId();
+        containerBeneficiarios.classList.add('loading');
         try {
             const beneficiaries = await apiFetch(`/api/beneficiarios?workspaceId=${workspaceId}`);
             renderBeneficiaries(beneficiaries);
         } catch (error) {
-            console.error('Error cargando beneficiarios:', error);
+            showToast('Error al cargar beneficiarios', 'error');
             renderBeneficiaries([]);
+        } finally {
+            containerBeneficiarios.classList.remove('loading');
         }
     }
 

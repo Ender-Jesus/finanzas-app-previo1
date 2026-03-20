@@ -25,26 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
     async function initDashboard() {
         const workspaceId = getWorkspaceId();
         
+        tableMovimientos.classList.add('loading');
         try {
             // 1. Obtener Resumen (Usamos el endpoint verificado o fallback)
-            // Según investigación previa: /api/dashboard/resumen-mensual?workspaceId=...
             const resumen = await apiFetch(`/api/dashboard/resumen-mensual?workspaceId=${workspaceId}`);
-            
-            // 2. Renderizar Tarjetas
             renderSummaryCards(resumen);
 
-            // 3. Obtener y Renderizar Gráfico (Usamos reporte por categoría)
+            // 2. Obtener y Renderizar Gráfico
             const gastosResponse = await apiFetch(`/api/reportes/gastos-por-categoria?workspaceId=${workspaceId}`);
             renderChart(gastosResponse);
 
-            // 4. Obtener últimos movimientos
+            // 3. Obtener últimos movimientos
             const movimientos = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
             renderRecentMovements(movimientos.slice(0, 5));
 
         } catch (error) {
-            console.error('Error cargando dashboard:', error);
-            // Intentar cargar datos mock si el API falla para demostrar UI
+            showToast('Error al cargar datos del dashboard', 'error');
             renderMockData();
+        } finally {
+            tableMovimientos.classList.remove('loading');
         }
     }
 

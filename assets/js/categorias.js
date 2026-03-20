@@ -37,9 +37,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({ nombre, tipo, workspaceId })
             });
             formCategoria.reset();
+            showToast('Categoría creada con éxito', 'success');
             loadCategories();
         } catch (error) {
-            alert('Error al crear categoría: ' + error.message);
+            showToast(error.message, 'error');
         } finally {
             setLoading(false);
         }
@@ -61,21 +62,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
             modalDelete.classList.add('hidden');
             categoryToDelete = null;
+            showToast('Categoría eliminada', 'success');
             loadCategories();
         } catch (error) {
-            alert('Error al eliminar: ' + error.message);
+            showToast(error.message, 'error');
         }
     });
 
     // --- Funciones Core ---
     async function loadCategories() {
         const workspaceId = getWorkspaceId();
+        tableCategorias.classList.add('loading');
         try {
             const categories = await apiFetch(`/api/categorias?workspaceId=${workspaceId}`);
             renderCategories(categories);
         } catch (error) {
-            console.error('Error cargando categorías:', error);
-            renderCategories([]); // Mostrar estado vacío si hay error
+            showToast('Error al cargar categorías', 'error');
+            renderCategories([]); 
+        } finally {
+            tableCategorias.classList.remove('loading');
         }
     }
 

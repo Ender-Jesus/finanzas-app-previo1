@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const workspaceId = getWorkspaceId();
 
         if (!descripcion || isNaN(valor) || valor <= 0 || !fecha || !categoriaId) {
-            alert('Por favor completa todos los campos correctamente.');
+            showToast('Por favor completa todos los campos correctamente.', 'error');
             return;
         }
 
@@ -84,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
             formMovimiento.reset();
             document.getElementById('mov-fecha').valueAsDate = new Date();
             badgeTipoContainer.classList.add('hidden');
+            showToast('Movimiento registrado', 'success');
             loadMovements(); // Recargar lista
         } catch (error) {
-            alert('Error al registrar: ' + error.message);
+            showToast(error.message, 'error');
         } finally {
             setLoading(false);
         }
@@ -141,18 +142,21 @@ document.addEventListener('DOMContentLoaded', () => {
             loadMovements(); // Cargar movimientos tras cargar dependencias
 
         } catch (error) {
-            console.error('Error cargando dependencias:', error);
+            showToast('Error cargando dependencias', 'error');
         }
     }
 
     async function loadMovements() {
         const workspaceId = getWorkspaceId();
+        tableMovimientos.classList.add('loading');
         try {
             allMovements = await apiFetch(`/api/transactions?workspaceId=${workspaceId}`);
             calculateBalance();
             applyFilters();
         } catch (error) {
-            console.error('Error cargando movimientos:', error);
+            showToast('Error cargando movimientos', 'error');
+        } finally {
+            tableMovimientos.classList.remove('loading');
         }
     }
 
